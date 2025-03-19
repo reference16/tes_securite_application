@@ -15,8 +15,14 @@ import java.time.LocalDate;
 @Service
 public class EmployeService {
 
+   // Supprimez l'annotation @Autowired ici
+    private final EmployeRepository employeRepository;
+
+    // Ajoutez ce constructeur
     @Autowired
-    private EmployeRepository employeRepository;
+    public EmployeService(EmployeRepository employeRepository) {
+        this.employeRepository = employeRepository;
+    }
 
     /**
      * Méthode enregistrant un nouvel employé dans l'entreprise
